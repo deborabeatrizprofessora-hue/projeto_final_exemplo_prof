@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FAQ | The Cozy Bean - Café Artesanal</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ===================================
+         NAVBAR
+    ==================================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand logo fw-bold" href="index.html">
+                <i class="bi bi-cup-hot me-2"></i>THE COZY BEAN
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="produtos.html" class="nav-link">Cardápio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#reservas" class="nav-link">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#galeria" class="nav-link">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="faq.html" class="nav-link active">FAQ</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex gap-2 ms-2">
+                    <a href="index.html#reservas" class="btn btn-caramel btn-sm">
+                        <i class="bi bi-calendar-check me-1"></i>Reservar
+                    </a>
+                    <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        <i class="bi bi-box-arrow-in-right me-1"></i>Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================================
+         HERO FAQ
+    ==================================== -->
+
+    <header class="hero-section" style="background: linear-gradient(135deg, rgba(24, 13, 8, 0.8) 0%, rgba(198, 122, 66, 0.55) 100%), url('img/hero.png') center/cover; background-attachment: fixed;">
+        <div class="overlay"></div>
+        <div class="container hero-content text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-12">
+                    <h1 class="hero-title display-4 fw-bold mb-3">Perguntas Frequentes</h1>
+                    <p class="hero-subtitle lead mb-4">Respostas rápidas para você aproveitar o melhor da nossa cafeteria com facilidade, segurança e estilo.</p>
+                    <a href="#faq-sections" class="btn btn-caramel btn-lg">
+                        <i class="bi bi-question-circle me-2"></i>Ver Respostas</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================================
+         FAQ INFO CARDS
+    ==================================== -->
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 col-12">
+                    <div class="card rounded-4 shadow-sm border-0 h-100">
+                        <div class="card-body p-4">
+                            <span class="badge bg-caramel text-white mb-3 px-3 py-2 rounded-pill">Serviço</span>
+                            <h5 class="fw-bold mb-3">Atendimento Premium</h5>
+                            <p class="text-muted">Agende sua visita, escolha seu horário e tenha uma experiência personalizada com nossos baristas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="card rounded-4 shadow-sm border-0 h-100">
+                        <div class="card-body p-4">
+                            <span class="badge bg-caramel text-white mb-3 px-3 py-2 rounded-pill">Entrega</span>
+                            <h5 class="fw-bold mb-3">Delivery e Retirada</h5>
+                            <p class="text-muted">Peça online para delivery ou retire no balcão com rapidez e segurança, direto do seu celular.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="card rounded-4 shadow-sm border-0 h-100">
+                        <div class="card-body p-4">
+                            <span class="badge bg-caramel text-white mb-3 px-3 py-2 rounded-pill">Qualidade</span>
+                            <h5 class="fw-bold mb-3">Ingredientes Selecionados</h5>
+                            <p class="text-muted">Utilizamos grãos especiais e receitas exclusivas para garantir sabor marcante em cada xícara.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================
+         FAQ SECTION
+    ==================================== -->
+
+    <section id="faq-sections" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Dúvidas mais comuns</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-12">
+                    <div class="accordion" id="faqAccordion">
+
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded-4">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button rounded-4" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="bi bi-calendar-check me-3 text-caramel"></i>Como faço uma reserva para o fim de semana?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Você pode reservar pelo nosso site, pelo WhatsApp oficial ou por telefone. Recomendamos fazer a reserva com antecedência para garantir sua mesa em horários de maior movimento.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded-4">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button rounded-4 collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="bi bi-car-front me-3 text-caramel"></i>Vocês oferecem delivery e quais são as áreas atendidas?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim, temos delivery para toda a zona sul e região central. O valor da entrega varia conforme a distância e pode ser conferido na hora do pedido.</n></div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded-4">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button rounded-4 collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="bi bi-leaf me-3 text-caramel"></i>Existem opções vegetarianas e veganas?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim, temos uma seleção especial de bebidas, snacks e sobremesas veganas. Nossa equipe também pode adaptar alguns itens do cardápio para você.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded-4">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button rounded-4 collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <i class="bi bi-clock me-3 text-caramel"></i>Qual o horário de funcionamento durante a semana?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Funcionamos de segunda a sexta das 7h às 22h, e aos sábados e domingos das 8h às 23h. Em feriados, o horário pode sofrer pequenas alterações.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 mb-3 shadow-sm rounded-4">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button rounded-4 collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <i class="bi bi-shield-lock me-3 text-caramel"></i>Como é o protocolo de higiene e segurança?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Mantemos um rigoroso protocolo de higiene, com limpeza constante de superfícies, luvas e máscaras para a equipe, além de álcool em gel disponível em todo o ambiente.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm rounded-4">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button rounded-4 collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <i class="bi bi-chat-right-text me-3 text-caramel"></i>Como posso falar com o atendimento ao cliente?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Você pode entrar em contato pelo WhatsApp, telefone ou e-mail. Também atendemos mensagens diretas nas nossas redes sociais para dúvidas rápidas.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================
+         CTA FINAL
+    ==================================== -->
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-between g-4">
+                <div class="col-lg-7 col-12">
+                    <h2 class="section-title">Ainda com dúvida?</h2>
+                    <p class="lead text-muted">Nossa equipe está pronta para ajudar. Entre em contato e receba atendimento rápido e personalizado para seu pedido ou reserva.</p>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="card rounded-4 shadow-sm border-0 p-4 bg-white">
+                        <h5 class="fw-bold mb-3">Contato Rápido</h5>
+                        <p class="mb-2"><i class="bi bi-telephone me-2 text-caramel"></i> (21) 99999-9999</p>
+                        <p class="mb-2"><i class="bi bi-whatsapp me-2 text-caramel"></i> WhatsApp disponível</p>
+                        <p class="mb-0"><i class="bi bi-envelope me-2 text-caramel"></i> contato@cozybean.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================
+         FOOTER
+    ==================================== -->
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <h3 class="footer-brand fw-bold mb-3">
+                        <i class="bi bi-cup-hot me-2"></i>THE COZY BEAN
+                    </h3>
+                    <p class="text-light">Criando experiências inesquecíveis em cada xícara de café.</p>
+                    <p class="small text-muted">Rua do Café, 123 - Centro | Rio de Janeiro</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5 class="footer-title fw-bold mb-3">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>
+                            <a href="tel:+552199999999" class="text-decoration-none text-light">(21) 99999-9999</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a href="mailto:contato@cozybean.com" class="text-decoration-none text-light">contato@cozybean.com</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-clock me-2"></i>
+                            <span class="text-light">Seg-Sex: 7h-22h</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <h5 class="footer-title fw-bold mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-light hover-link">Home</a></li>
+                        <li class="mb-2"><a href="produtos.html" class="text-decoration-none text-light hover-link">Cardápio</a></li>
+                        <li class="mb-2"><a href="index.html#galeria" class="text-decoration-none text-light hover-link">Galeria</a></li>
+                        <li><a href="faq.html" class="text-decoration-none text-light hover-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5 class="footer-title fw-bold mb-3">Siga-nos</h5>
+                    <div class="social-links d-flex flex-wrap gap-3">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link instagram"
+                            aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link facebook"
+                            aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="social-link whatsapp"
+                            aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-link tiktok"
+                            aria-label="TikTok">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social-link twitter"
+                            aria-label="X">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted small mb-0">
+                        <i class="bi bi-c-circle me-1"></i> 2026 The Cozy Bean. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modais -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="loginModalLabel">Fazer Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmailFaq" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="loginEmailFaq" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPasswordFaq" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="loginPasswordFaq" required>
+                        </div>
+                        <button type="submit" class="btn btn-caramel w-100">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

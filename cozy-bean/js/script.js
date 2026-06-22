@@ -1,82 +1,188 @@
 // ================================
+// INICIAÇÃO DO DOCUMENTO
+// ================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    initCounter();
+    initScrollAnimations();
+    initNavbarScroll();
+    initFormHandler();
+    initSmoothScroll();
+});
+
+// ================================
 // CONTADOR ANIMADO
 // ================================
 
-const counters = document.querySelectorAll('.counter');
+function initCounter() {
+    const counters = document.querySelectorAll('.counter');
 
-counters.forEach(counter => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                entry.target.classList.add('counted');
+                animateCounter(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
 
-    const updateCounter = () => {
+    counters.forEach(counter => observer.observe(counter));
+}
 
-        const target = +counter.dataset.target;
-        const count = +counter.innerText;
+function animateCounter(counter) {
+    const target = +counter.dataset.target;
+    const duration = 2000; // 2 segundos
+    const start = Date.now();
 
-        const increment = target / 100;
+    function update() {
+        const elapsed = Date.now() - start;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function para animação suave
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const count = Math.floor(target * easeOut);
 
-        if (count < target) {
+        counter.innerText = count.toLocaleString('pt-BR');
 
-            counter.innerText =
-                Math.ceil(count + increment);
-
-            setTimeout(updateCounter, 20);
-
+        if (progress < 1) {
+            requestAnimationFrame(update);
         } else {
-
-            counter.innerText = target;
-
+            counter.innerText = target.toLocaleString('pt-BR');
         }
-
     }
 
-    updateCounter();
-
-});
+    update();
+}
 
 // ================================
-// SCROLL ANIMATION
+// ANIMAÇÕES AO SCROLL
 // ================================
 
-const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add('show');
-
-        }
-
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
 
-});
+    // Animar seções
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('fade-in');
+        observer.observe(section);
+    });
 
-document.querySelectorAll('section').forEach(section => {
-
-    section.classList.add('fade-in');
-
-    observer.observe(section);
-
-});
+    // Animar elementos individuais
+    document.querySelectorAll('.stat-card, .gallery-item, .form-box').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+}
 
 // ================================
 // NAVBAR SCROLL
 // ================================
 
-window.addEventListener('scroll', () => {
+function initNavbarScroll() {
+    const navbar = document.querySelector('.custom-navbar');
+    let lastScrollY = 0;
 
-    const nav =
-        document.querySelector('.custom-navbar');
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.scrollY;
 
-    if (window.scrollY > 50) {
+        // Muda cor da navbar ao fazer scroll
+        if (currentScroll > 50) {
+            navbar.style.background = 'rgba(24, 13, 8, 0.98)';
+            navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+        } else {
+            navbar.style.background = 'rgba(24, 13, 8, 0.95)';
+            navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        }
 
-        nav.style.background =
-            "#8d2d00";
+        // Efeito de hide/show da navbar
+        if (currentScroll > lastScrollY && currentScroll > 100) {
+            navbar.style.transform = 'translateY(-100%)';
+            navbar.style.transition = 'transform 0.3s ease-in-out';
+        } else {
+            navbar.style.transform = 'translateY(0)';
+            navbar.style.transition = 'transform 0.3s ease-in-out';
+        }
 
-    } else {
+        lastScrollY = currentScroll;
+    }, { passive: true });
+}
 
-        nav.style.background =
-            "rgba(24,13,8,.85)";
+// ================================
+// TRATAMENTO DE FORMULÁRIOS
+// ================================
 
+function initFormHandler() {
+    const newsletterForm = document.getElementById('newsletterForm');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular envio do formulário
+            const submitBtn = this.querySelector('button[type=\"submit\"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class=\"bi bi-check-circle me-2\"></i>Cadastrado com sucesso!';
+            submitBtn.disabled = true;
+            submitBtn.classList.add('btn-success');
+            submitBtn.classList.remove('btn-caramel');
+            
+            // Resetar após 3 segundos
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('btn-success');
+                submitBtn.classList.add('btn-caramel');
+                this.reset();
+            }, 3000);
+        });
     }
+}
 
-});
+// ================================
+// SMOOTH SCROLL PARA LINKS INTERNOS
+// ================================
+
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                
+                const target = document.querySelector(href);
+                const navHeight = document.querySelector('.custom-navbar').offsetHeight;
+                
+                window.scrollTo({
+                    top: target.offsetTop - navHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+// ================================
+// UTILITY: Debounce
+// ================================
+
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}

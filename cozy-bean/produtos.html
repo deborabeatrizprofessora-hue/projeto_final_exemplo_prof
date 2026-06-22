@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cardápio | The Cozy Bean - Café Artesanal</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ===================================
+         NAVBAR
+    ==================================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand logo fw-bold" href="index.html">
+                <i class="bi bi-cup-hot me-2"></i>THE COZY BEAN
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a href="index.html#cardapio" class="nav-link">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="produtos.html" class="nav-link active">Cardápio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.html#reservas" class="nav-link">Reservas</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.html#galeria" class="nav-link">Galeria</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.html#faq" class="nav-link">FAQ</a>
+                    </li>
+
+                </ul>
+
+                <div class="d-flex gap-2 ms-2">
+
+                    <button class="btn btn-caramel btn-sm position-relative" type="button" data-bs-toggle="modal" data-bs-target="#carrinhoModal">
+                        <i class="bi bi-bag-check me-1"></i>Carrinho
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count" style="display: none;">
+                            0
+                        </span>
+                    </button>
+
+                    <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="bi bi-box-arrow-in-right me-1"></i>Login
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ===================================
+         HERO PRODUTOS
+    ==================================== -->
+
+    <section class="hero-produtos" style="background: linear-gradient(135deg, rgba(198, 122, 66, 0.8) 0%, rgba(45, 26, 18, 0.8) 100%), url('img/hero.png') center/cover; background-attachment: fixed;" id="topo">
+
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-lg-8 col-12">
+                    <h1 class="hero-title display-4 fw-bold mb-3">Nosso Cardápio</h1>
+                    <p class="hero-subtitle lead text-light mb-4">
+                        Descubra os melhores produtos artesanais preparados com café de qualidade premium
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ===================================
+         FILTROS & BUSCA
+    ==================================== -->
+
+    <section class="py-5 bg-light">
+
+        <div class="container-fluid px-3 px-md-5">
+
+            <div class="row align-items-center g-3">
+
+                <!-- Filtro por Categoria -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="filtro-container">
+                        <h6 class="fw-bold text-muted mb-3">Filtrar por Categoria</h6>
+                        <div class="btn-group-vertical w-100" role="group">
+                            <input type="radio" class="btn-check" name="categoria" id="cat-todos" value="todos" checked>
+                            <label class="btn btn-outline-caramel text-start" for="cat-todos">
+                                <i class="bi bi-list-ul me-2"></i>Todos os Produtos
+                            </label>
+
+                            <input type="radio" class="btn-check" name="categoria" id="cat-cafes" value="cafes">
+                            <label class="btn btn-outline-caramel text-start" for="cat-cafes">
+                                <i class="bi bi-cup-straw me-2"></i>Cafés
+                            </label>
+
+                            <input type="radio" class="btn-check" name="categoria" id="cat-bebidas" value="bebidas">
+                            <label class="btn btn-outline-caramel text-start" for="cat-bebidas">
+                                <i class="bi bi-cup me-2"></i>Bebidas Quentes
+                            </label>
+
+                            <input type="radio" class="btn-check" name="categoria" id="cat-frios" value="frios">
+                            <label class="btn btn-outline-caramel text-start" for="cat-frios">
+                                <i class="bi bi-snow me-2"></i>Bebidas Frias
+                            </label>
+
+                            <input type="radio" class="btn-check" name="categoria" id="cat-doces" value="doces">
+                            <label class="btn btn-outline-caramel text-start" for="cat-doces">
+                                <i class="bi bi-cake2 me-2"></i>Doces & Salgados
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Busca -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="search-container">
+                        <h6 class="fw-bold text-muted mb-3">Buscar Produto</h6>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text bg-white border-caramel">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" id="searchInput" class="form-control border-caramel" placeholder="Digite o nome do produto..." aria-label="Buscar">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+         GRID DE PRODUTOS
+    ==================================== -->
+
+    <section class="py-5">
+
+        <div class="container-fluid px-3 px-md-5">
+
+            <div id="produtosGrid" class="row g-4">
+                <!-- Produtos serão inseridos aqui pelo JavaScript -->
+            </div>
+
+            <div id="semResultado" class="alert alert-info text-center mt-5" style="display: none;">
+                <i class="bi bi-info-circle me-2"></i>
+                <strong>Nenhum produto encontrado.</strong> Tente otra busca!
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+         FOOTER
+    ==================================== -->
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row g-4 align-items-start">
+
+                <div class="col-lg-4 col-md-6 col-12">
+                    <h3 class="footer-brand fw-bold mb-3">
+                        <i class="bi bi-cup-hot me-2"></i>THE COZY BEAN
+                    </h3>
+                    <p class="text-light">Criando experiências inesquecíveis em cada xícara de café.</p>
+                    <p class="small text-muted">Rua do Café, 123 - Centro | Rio de Janeiro</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5 class="footer-title fw-bold mb-3">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>
+                            <a href="tel:+552199999999" class="text-decoration-none text-light">(21) 99999-9999</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a href="mailto:contato@cozybean.com" class="text-decoration-none text-light">contato@cozybean.com</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-clock me-2"></i>
+                            <span class="text-light">Seg-Sex: 7h-22h</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-12">
+                    <h5 class="footer-title fw-bold mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html#cardapio" class="text-decoration-none text-light hover-link">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="produtos.html" class="text-decoration-none text-light hover-link">Cardápio</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="index.html#galeria" class="text-decoration-none text-light hover-link">Galeria</a>
+                        </li>
+                        <li>
+                            <a href="index.html#faq" class="text-decoration-none text-light hover-link">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5 class="footer-title fw-bold mb-3">Siga-nos</h5>
+                    <div class="social-links d-flex flex-wrap gap-3">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="social-link whatsapp" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-link tiktok" aria-label="TikTok">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social-link twitter" aria-label="X">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted small mb-0">
+                        <i class="bi bi-c-circle me-1"></i> 2025 The Cozy Bean. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================
+         MODAL CARRINHO
+    ==================================== -->
+
+    <div class="modal fade" id="carrinhoModal" tabindex="-1" aria-labelledby="carrinhoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="carrinhoModalLabel">
+                        <i class="bi bi-bag-check me-2"></i>Seu Carrinho
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carrinhoContent">
+                        <div class="alert alert-info text-center">
+                            <i class="bi bi-emoji-smile me-2"></i>
+                            Seu carrinho está vazio. Adicione produtos para começar!
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-top">
+                    <div class="w-100">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <strong>Total: R$ <span id="totalCarrinho">0.00</span></strong>
+                            </div>
+                            <div class="col-6 text-end">
+                                <button type="button" class="btn btn-secondary btn-sm me-2" data-bs-dismiss="modal">Continuar Comprando</button>
+                                <button type="button" class="btn btn-caramel btn-sm">Finalizar Pedido</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================
+         MODAL LOGIN
+    ==================================== -->
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="loginModalLabel">Fazer Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-caramel w-100">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+    <script src="js/produtos.js"></script>
+
+</body>
+
+</html>

@@ -18,10 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 
 <body>
@@ -32,24 +29,22 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
 
-        <div class="container">
+        <div class="container-fluid">
 
-            <a class="navbar-brand logo" href="#">
-                THE COZY BEAN
+            <a class="navbar-brand logo fw-bold" href="#home">
+                <i class="bi bi-cup-hot me-2"></i>THE COZY BEAN
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-
             </button>
 
             <div class="collapse navbar-collapse" id="menu">
 
-                <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a href="#cardapio" class="nav-link">Cardápio</a>
+                        <a href="#produtos.html" class="nav-link"></a>
                     </li>
 
                     <li class="nav-item">
@@ -70,14 +65,14 @@
 
                 </ul>
 
-                <div class="d-flex gap-2">
+                <div class="d-flex gap-2 ms-2">
 
-                    <button class="btn btn-caramel">
-                        Cadastro
+                    <button class="btn btn-caramel btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#cadastroModal">
+                        <i class="bi bi-person-plus me-1"></i>Cadastro
                     </button>
 
-                    <button class="btn btn-outline-light">
-                        Login
+                    <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="bi bi-box-arrow-in-right me-1"></i>Login
                     </button>
 
                 </div>
@@ -92,33 +87,32 @@
          HERO SECTION
     ==================================== -->
 
-    <header class="hero-section">
+    <header class="hero-section" id="home">
 
         <div class="overlay"></div>
 
-        <div class="container hero-content">
+        <div class="container hero-content" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="row">
+            <div class="row align-items-center">
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-12">
 
-                    <h1>
-                        Saboreie Momentos,
-                        Crie Memórias.
+                    <h1 class="hero-title display-3 fw-bold mb-4">
+                        Saboreie Momentos,<br>Crie Memórias.
                     </h1>
 
-                    <p>
+                    <p class="hero-subtitle lead mb-4">
                         Experiências autênticas, café artesanal e o ambiente mais instagramável da cidade.
                     </p>
 
-                    <div class="hero-buttons">
+                    <div class="hero-buttons d-flex flex-wrap gap-3">
 
-                        <a href="#" class="btn btn-outline-light btn-lg">
-                            Ver Cardápio
+                        <a href="#cardapio" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-list-ul me-2"></i>Ver Cardápio
                         </a>
 
-                        <a href="#" class="btn btn-caramel btn-lg">
-                            Reservar Mesa
+                        <a href="#reservas" class="btn btn-caramel btn-lg">
+                            <i class="bi bi-calendar-check me-2"></i>Reservar Mesa
                         </a>
 
                     </div>
@@ -135,30 +129,42 @@
          CONTADORES
     ==================================== -->
 
-    <section class="stats">
+    <section class="stats py-5">
 
-        <div class="container">
+        <div class="container-fluid">
 
-            <div class="row text-center">
+            <div class="row text-center g-4">
 
-                <div class="col-md-3">
-                    <h2 class="counter" data-target="15000">0</h2>
-                    <p>Clientes</p>
+                <div class="col-md-6 col-lg-3 col-12">
+                    <div class="stat-card">
+                        <i class="bi bi-people-fill stat-icon"></i>
+                        <h2 class="counter h2 fw-bold" data-target="15000">0</h2>
+                        <p class="text-muted fw-500">Clientes Satisfeitos</p>
+                    </div>
                 </div>
 
-                <div class="col-md-3">
-                    <h2 class="counter" data-target="120">0</h2>
-                    <p>Tipos de Café</p>
+                <div class="col-md-6 col-lg-3 col-12">
+                    <div class="stat-card">
+                        <i class="bi bi-cup-straw stat-icon"></i>
+                        <h2 class="counter h2 fw-bold" data-target="120">0</h2>
+                        <p class="text-muted fw-500">Tipos de Café</p>
+                    </div>
                 </div>
 
-                <div class="col-md-3">
-                    <h2 class="counter" data-target="15">0</h2>
-                    <p>Anos de História</p>
+                <div class="col-md-6 col-lg-3 col-12">
+                    <div class="stat-card">
+                        <i class="bi bi-calendar-event stat-icon"></i>
+                        <h2 class="counter h2 fw-bold" data-target="15">0</h2>
+                        <p class="text-muted fw-500">Anos de Excelência</p>
+                    </div>
                 </div>
 
-                <div class="col-md-3">
-                    <h2 class="counter" data-target="98">0</h2>
-                    <p>% Satisfação</p>
+                <div class="col-md-6 col-lg-3 col-12">
+                    <div class="stat-card">
+                        <i class="bi bi-hand-thumbs-up stat-icon"></i>
+                        <h2 class="counter h2 fw-bold" data-target="98">0</h2>
+                        <p class="text-muted fw-500">% de Satisfação</p>
+                    </div>
                 </div>
 
             </div>
@@ -171,7 +177,7 @@
          NOSSA ESSÊNCIA
     ==================================== -->
 
-    <section class="essencia section-padding">
+    <section class="essencia section-padding bg-light" id="cardapio">
 
         <div class="container">
 
@@ -179,24 +185,30 @@
                 Nossa Essência
             </h2>
 
-            <div class="row align-items-center">
+            <div class="row align-items-center g-4">
 
-                <div class="col-lg-6">
-
-                    <img src="img/galeria2.png" class="img-fluid rounded shadow">
-
+                <div class="col-lg-6 col-12">
+                    <figure class="mb-0">
+                        <img src="img/galeria2.png" class="img-fluid rounded-4 shadow" alt="Café artesanal The Cozy Bean">
+                    </figure>
                 </div>
 
-                <div class="col-lg-6">
-
-                    <p>
-                        Qualidade e sentimento em cada xícara.
-                        Café artesanal preparado com técnicas modernas.
+                <div class="col-lg-6 col-12">
+                    <h3 class="fw-bold mb-3">Qualidade em Cada Detalhe</h3>
+                    
+                    <p class="lead text-muted mb-3">
+                        Qualidade e sentimento em cada xícara. Café artesanal preparado com técnicas modernas e ingredientes premium.
                     </p>
+                    
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Grãos selecionados internacionalmente</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Baristas certificados</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Ambiente acolhedor</li>
+                    </ul>
 
-                    <button class="btn btn-caramel">
-                        Conheça Mais
-                    </button>
+                    <a href="#" class="btn btn-caramel btn-lg" data-bs-toggle="modal" data-bs-target="#cardapioModal">
+                        <i class="bi bi-eye me-2"></i>Conheça Nosso Cardápio
+                    </a>
 
                 </div>
 
@@ -212,18 +224,28 @@
 
     <section id="galeria" class="gallery section-padding">
 
-        <div class="container">
+        <div class="container-fluid px-3 px-md-5">
 
             <h2 class="section-title">
                 Galeria Instagramável
             </h2>
 
-            <div class="gallery-grid">
-
-                <img src="img/galeria3.png">
-                <img src="img/galeria2.png">
-
-
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-4 col-12">
+                    <div class="gallery-item">
+                        <img src="img/galeria3.png" class="img-fluid rounded-4" alt="Ambiente The Cozy Bean">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-12">
+                    <div class="gallery-item">
+                        <img src="img/galeria2.png" class="img-fluid rounded-4" alt="Café artesanal">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-12">
+                    <div class="gallery-item">
+                        <img src="img/galeria3.png" class="img-fluid rounded-4" alt="Ambientação The Cozy Bean">
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -231,27 +253,35 @@
     </section>
 
     <!-- ===================================
-         FORMULÁRIO
+         FORMULÁRIO NEWSLETTER
     ==================================== -->
 
-    <section class="cadastro section-padding">
+    <section class="cadastro section-padding bg-light" id="newsletter">
 
         <div class="container">
 
-            <div class="form-box">
+            <div class="form-box mx-auto" style="max-width: 500px;">
 
-                <h2>
-                    Cadastre-se e Fique por Dentro
+                <h2 class="text-center fw-bold mb-3">
+                    <i class="bi bi-envelope me-2"></i>Fique por Dentro
                 </h2>
+                
+                <p class="text-center text-muted mb-4">
+                    Receba promoções, novidades e cupons exclusivos no seu e-mail.
+                </p>
 
-                <form>
+                <form id="newsletterForm">
 
-                    <input type="text" class="form-control" placeholder="Nome Completo">
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="Seu Nome Completo" required>
+                    </div>
 
-                    <input type="email" class="form-control" placeholder="E-mail">
+                    <div class="mb-3">
+                        <input type="email" class="form-control form-control-lg" placeholder="Seu E-mail" required>
+                    </div>
 
-                    <button class="btn btn-caramel w-100">
-                        Cadastrar
+                    <button type="submit" class="btn btn-caramel w-100 btn-lg fw-bold">
+                        <i class="bi bi-arrow-right me-2"></i>Cadastrar
                     </button>
 
                 </form>
@@ -271,61 +301,76 @@
         <div class="container">
 
             <h2 class="section-title">
-                FAQ
+                Perguntas Frequentes
             </h2>
 
-            <div class="accordion" id="faqAccordion">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
 
-                <div class="accordion-item">
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button rounded" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    <i class="bi bi-calendar-check me-2 text-caramel"></i>
+                                    Como reservar uma mesa?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>A reserva pode ser feita de três formas:</p>
+                                    <ul>
+                                        <li>Online através do nosso site</li>
+                                        <li>Por telefone: (21) 99999-9999</li>
+                                        <li>Diretamente na cafeteria</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-                    <h2 class="accordion-header">
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false">
+                                    <i class="bi bi-leaf me-2 text-caramel"></i>
+                                    Há opções vegetarianas e veganas?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim! Temos opções especiais para quem prefere uma alimentação mais leve e sustentável. Mais de 40% do nosso cardápio é vegano.
+                                </div>
+                            </div>
+                        </div>
 
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"
-                            aria-expanded="true">
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false">
+                                    <i class="bi bi-clock me-2 text-caramel"></i>
+                                    Qual é o horário de funcionamento?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Funcionamos de segunda a sexta das 7h às 22h, sábados e domingos das 8h às 23h.
+                                </div>
+                            </div>
+                        </div>
 
-                            Como reservar uma mesa?
-
-                        </button>
-
-                    </h2>
-
-                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-
-                        <div class="accordion-body">
-
-                            A reserva pode ser feita online, por telefone ou diretamente na cafeteria.
-
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false">
+                                    <i class="bi bi-bicycle me-2 text-caramel"></i>
+                                    Vocês fazem delivery?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim! Entregamos em toda a região. Consulte as taxas e prazos através do nosso WhatsApp ou aplicativo.
+                                </div>
+                            </div>
                         </div>
 
                     </div>
-
                 </div>
-
-                <div class="accordion-item">
-
-                    <h2 class="accordion-header">
-
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq2" aria-expanded="false">
-
-                            Há opções vegetarianas e veganas?
-
-                        </button>
-
-                    </h2>
-
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-
-                        <div class="accordion-body">
-
-                            Sim! Temos opções especiais para quem prefere uma alimentação mais leve e sustentável.
-
-                        </div>
-
-                    </div>
-
-                </div>
-
             </div>
 
         </div>
@@ -337,63 +382,145 @@
     ==================================== -->
 
     <footer class="footer">
-
-        <div class="container">
-
-            <div class="row"> <g-4></g-4>align-items-start"
+        <div class="container-fluid">
+            <div class="row g-4 align-items-start">
 
                 <div class="col-lg-4 col-md-6 col-12">
-
-                    <h3 class="footer-brand"> THE COZY BEAN</h3>
-
-                    <p>Experiências inesquecíveis.</p>
-
+                    <h3 class="footer-brand fw-bold mb-3">
+                        <i class="bi bi-cup-hot me-2"></i>THE COZY BEAN
+                    </h3>
+                    <p class="text-light">Criando experiências inesquecíveis em cada xícara de café.</p>
+                    <p class="small text-muted">Rua do Café, 123 - Centro | Rio de Janeiro</p>
                 </div>
 
-                <div class="col-lg-3">
-
-                    <h5 class="footer-text md-2"> Contato</h5>
-
-                    <p>(21) 99999-9999</p>
-
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5 class="footer-title fw-bold mb-3">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>
+                            <a href="tel:+552199999999" class="text-decoration-none text-light">(21) 99999-9999</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a href="mailto:contato@cozbean.com" class="text-decoration-none text-light">contato@cozybean.com</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-clock me-2"></i>
+                            <span class="text-light">Seg-Sex: 7h-22h</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="col-lg-3">
-
-                    <h5 class="footer-title">Links</h5>
-                    <li><a href="#cardapio">cardapio</a></li>
-
-                    <p>Cardápio</p>
-
-                    <li><a href="#reserva">Reservas</a></li> 
-                    <li><a href="links"></a>    
+                <div class="col-lg-2 col-md-6 col-12">
+                    <h5 class="footer-title fw-bold mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#cardapio" class="text-decoration-none text-light hover-link">Cardápio</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#reservas" class="text-decoration-none text-light hover-link">Reservas</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#galeria" class="text-decoration-none text-light hover-link">Galeria</a>
+                        </li>
+                        <li>
+                            <a href="#faq" class="text-decoration-none text-light hover-link">FAQ</a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="col-lg-3">
-
-                    <h5>Redes Sociais</h5>
-
-                    <div class="social">
-
-                       <a href="https://www.instagram.com" id="instagram"><i class="bi bi-instagram"></i></a> 
-                        <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.whatsapp.com/download?lang=pt"><i class="bi bi-whatsapp"></i></a>
-                        <a href="https://www.tiktok.com/pt-BR/">><i class="bi bi-tiktok"></i></a>
-                        <a href="https://x.com/?lang=pt"><i class="bi bi-twiter-x"></i></a>
-/a> 
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5 class="footer-title fw-bold mb-3">Siga-nos</h5>
+                    <div class="social d-flex flex-wrap gap-3">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
                     </div>
-                    
-                
+                </div>
 
             </div>
-            <div class="footer-botton"></div>
-            <p> @&copy;Minha Cafeteria. Todos os direitos resrvados</p>
-        </div>
 
+            <hr class="border-secondary my-4">
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted small mb-0">
+                        <i class="bi bi-c-circle me-1"></i> 2025 The Cozy Bean. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!-- Modais -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="loginModalLabel">Fazer Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-caramel w-100">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cadastroModal" tabindex="-1" aria-labelledby="cadastroModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="cadastroModalLabel">Criar Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="cadastroNome" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="cadastroNome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cadastroEmail" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="cadastroEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cadastroPassword" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="cadastroPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-caramel w-100">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Custom JS -->
     <script src="js/script.js"></script>
 
 </body>
